@@ -10,7 +10,7 @@ function executor(func) {
 
 executor(greet);
 
-
+// function expresssions
 var expression = function() {
     console.log('Hello this is from the expression..');
 }
