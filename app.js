@@ -16,3 +16,9 @@ var expression = function() {
 }
 
 executor(expression);
+
+
+//use a function expression on the fly
+executor(function() {
+    console.log('Hello this is from on the fly function expression');
+});
