@@ -1,4 +1,5 @@
 var mod_types = require('./module_types');
+var reveling_module = require('./revelingModule');
 
 // populate the module.export object with a function
 mod_types.direct_function();
@@ -31,4 +32,6 @@ var greet_obj = new GreetConsFunc();
 // then execure the greet function.
 greet_obj.greet();
 
-
+// get the messenger function
+var r_module_func = reveling_module.messenger;
+r_module_func();
