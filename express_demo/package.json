@@ -1,0 +1,14 @@
+{
+  "name": "express_demo",
+  "version": "1.0.0",
+  "description": "Test apllication to demo express js",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kalpa Senanayake",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}
