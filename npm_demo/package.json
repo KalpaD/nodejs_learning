@@ -1,0 +1,15 @@
+{
+  "name": "npm_demo",
+  "version": "1.0.0",
+  "description": "Demo application to show how npm works",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kalpa",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.18.1" // ^ means that npm will take care of the minor version updates but not major
+                        // ~ means that nmp will only take care of the patch version updates.
+  }
+}
