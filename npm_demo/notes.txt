@@ -1,0 +1,13 @@
+npm symantic versioning
+
+"^ means that npm will take care of the minor version updates but not major",
+"~ means that nmp will only take care of the patch version updates."
+
+// This command will download and save the dependency to project's package.json file.
+npm install <package_name> --save
+
+// This command will download and save the dependency to package.json as dev dependency.
+npm install <package_name> --save-dev
+
+// This command will download and save the dependency in global location rather than the project local location.
+npm install -g <package_name>

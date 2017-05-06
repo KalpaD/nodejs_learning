@@ -9,7 +9,9 @@
   "author": "Kalpa",
   "license": "ISC",
   "dependencies": {
-    "moment": "^2.18.1" // ^ means that npm will take care of the minor version updates but not major
-                        // ~ means that nmp will only take care of the patch version updates.
+    "moment": "^2.18.1"
+  },
+  "devDependencies": {
+    "jasmine-node": "^1.14.5"
   }
 }
