@@ -17,7 +17,8 @@ app.use('/', (req, res, next) => {
 
 /** This middleware response with a html output */
 app.get('/person/:name', (req, res) => {
-    res.render('index', {name: req.params.name});
+    res.render('index', {name: req.params.name, // Demo how to access the path param and inject it in to template.
+         age: req.query.age}); // Demo how to access the query param and inject it in to template.
 });
 
 /**This demonestrate how the use the path parameters in express */
