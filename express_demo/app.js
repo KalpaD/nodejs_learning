@@ -6,6 +6,9 @@ var app = express();
 // A middelware that serve the static content 
 app.use('/assets', express.static(__dirname + '/public'));
 
+// Setting ESJ as the view engine
+app.set('view engine', 'ejs');
+
 // A middleware with next operation
 app.use('/', (req, res, next) => {
     console.log(`{request recived for : ${req.url}'`);
@@ -13,8 +16,8 @@ app.use('/', (req, res, next) => {
 });
 
 /** This middleware response with a html output */
-app.get('/', (req, res) => {
-    res.send('<html><head><link href=assets/style.css type=text/css rel=stylesheet /></head><body><h1>Hello world!</h1></body></html>');
+app.get('/person/:name', (req, res) => {
+    res.render('index', {name: req.params.name});
 });
 
 /**This demonestrate how the use the path parameters in express */
