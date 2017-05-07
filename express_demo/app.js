@@ -1,7 +1,10 @@
 var express = require('express');
 var fs = require('fs');
+var bodyParser = require('body-parser');
 
 var app = express();
+// create application/x-www-form-urlencoded parser
+var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 // A middelware that serve the static content 
 app.use('/assets', express.static(__dirname + '/public'));
@@ -19,6 +22,11 @@ app.use('/', (req, res, next) => {
 app.get('/person/:name', (req, res) => {
     res.render('index', {name: req.params.name, // Demo how to access the path param and inject it in to template.
          age: req.query.age}); // Demo how to access the query param and inject it in to template.
+});
+
+app.post('/person', urlencodedParser, (req, res) => {
+    if (!req.body) return res.sendStatus(400)
+    res.render('submitted', {username: req.body.username, password: req.body.password})
 });
 
 /**This demonestrate how the use the path parameters in express */

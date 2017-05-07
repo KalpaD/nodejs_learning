@@ -5,5 +5,11 @@
 <body>
     <h1>Name : <%= name %></h1>
     <h1>Age : <%= age %></h1>
+
+    <form method="POST" action="/person">
+        User Name : <input type="text" name="username" id="username"/></br>
+        Password  : <input type="text" name="password" id="password"/></br>
+        <input type="submit" value="Submit">
+    </form>
 </body>
 </html>
