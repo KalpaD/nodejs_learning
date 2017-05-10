@@ -8,6 +8,9 @@ module.exports = function(app) {
     //Returns middleware that only parses urlencoded bodies.
     app.use(bodyParser.urlencoded({ extended: true }));
 
+    /**
+     * Return all todos for given username
+     */
     app.get('/api/todos/:uname', (req, res) => {
         console.log('Request recived for api/todos/:uname');
         Todos.find({ username: req.params.uname }, (err, todos) => {
@@ -17,6 +20,9 @@ module.exports = function(app) {
         });
     });
 
+    /**
+     * Get todo for given todo id
+     */
     app.get('/api/todo/:id', (req, res) => {
         console.log('Request recived for /api/todos/:id '+ req.params.id);
         Todos.findById({ _id: req.params.id}, (err, todo) => {
@@ -26,6 +32,9 @@ module.exports = function(app) {
         });
     });
 
+    /**
+     * Create or update todo with the given todo id and other details.
+     */
     app.post('/api/todo', (req, res) => {
         console.log('Request recived for POST /api/todo');
         if (req.body.id) {
@@ -52,7 +61,10 @@ module.exports = function(app) {
             });
         }
     });
-
+    
+    /**
+     * Delete todo with the given id.
+     */
     app.delete('/api/todo', (req, res) => {
         console.log('Request recived for DELETE /api/todo');
         console.log(`Request recived with id: ${req.body._id}`);
